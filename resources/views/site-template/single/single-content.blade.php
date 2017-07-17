@@ -10,8 +10,13 @@
 							<ul class="slides">
 	@foreach($data as $data)
 
-<li data-thumb=" public/assets/images/man/armani/AR0431/preview/ar0431.jpg " >
-						<div class="thumb-image">			
+
+
+<li data-thumb = "{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >
+
+<!-- <li data-thumb=" public/assets/images/man/armani/AR0431/preview/ar0431.jpg " >
+						 -->						
+						 <div class="thumb-image">			
 {{ Html::image('assets/images/'.$data->sex.'/'. 
 								$data->alias .'/'.
 								$data->vendor_code.'/preview/'.
@@ -20,30 +25,12 @@
 				) 
 }}  	
 						</div>
-								</li>	
+</li>	
 									
 	@endforeach							
 							</ul>
 						</div>
-<!-- FlexSlider -->
 
-<!-- Scripts -->
-		
-		<script src="{{asset('assets/js/imagezoom.js')}}"></script>
-		<script defer src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
-		<link rel="stylesheet" href="{{asset('assets/css/flexslider.css')}}" type="text/css" media="screen" />	
-
-				<script>
-						
-					$(window).load(function() {
-						$('.flexslider').flexslider({
-						  animation: "slide",
-						  controlNav: "thumbnails"
-					    });
-					});
-					
-				</script>		
-<!-- /FlexSlider -->
 					</div>
 				</div>	
 

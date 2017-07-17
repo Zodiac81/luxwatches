@@ -3,12 +3,12 @@
 		<div class="container">
 		<div class="row">
 			<div class="top-header-main">
-				<!-- <div class="col-md-4 top-header-left">
+				 <div class="col-md-2 top-header-left">
                     <a href="{{ route('home')}}">
-                            {{ Html::image('assets/images/header_logo.png') }}          
+                            <img style="width:30%;" src ="{{ asset('assets/images/white-watch-512.png') }}">
                                     </a>
-                                </div>  -->
-			<div class="col-md-10 top-header-left">
+                                </div>  
+			<div class="col-md-8 top-header-left">
 				<div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">

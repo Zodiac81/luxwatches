@@ -37,9 +37,6 @@
         </div>
     </div>
 
-<script src="{{asset('assets/js/payment.js')}}"></script>
-
-
 @endsection
 
 

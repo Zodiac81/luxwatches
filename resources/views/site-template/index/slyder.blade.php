@@ -9,19 +9,19 @@
   <!-- Контент слайда (slider wrap)-->
   <div class="carousel-inner" >
     <div class="item active">
-      <img class ="img-width" src="{{asset('assets/images/bnr-1.jpg')}}" alt="banner1">
+      <img class ="img_width" src="{{asset('assets/images/bnr-1.jpg')}}" alt="banner1">
       <div class="carousel-caption">
         
       </div>
     </div>
     <div class="item">
-      <img class ="img-width" src="{{asset('assets/images/bnr-2.jpg')}}" alt="banner2">
+      <img class ="img_width" src="{{asset('assets/images/bnr-2.jpg')}}" alt="banner2">
       <div class="carousel-caption">
         
       </div>
     </div>
     <div class="item">
-      <img class ="img-width" src="{{asset('assets/images/bnr-3.jpg')}}" alt="banner3">
+      <img class ="img_width" src="{{asset('assets/images/bnr-3.jpg')}}" alt="banner3">
       <div class="carousel-caption">
         <h3>Выбор редакции</h3>
       </div>

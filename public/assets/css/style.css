@@ -28,6 +28,16 @@ body a{
     src:url(../fonts/BreeSerif-Regular.ttf) format('truetype');
 }
 
+@import url('https://fonts.googleapis.com/css?family=Cuprum');
+
+.logo_width{
+	width: 30%;
+}
+
+.img_width{
+	width: 100%;
+}
+
 #pagination{
 	margin: 30px auto;
 	display: table;
