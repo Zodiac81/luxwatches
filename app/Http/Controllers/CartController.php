@@ -86,6 +86,9 @@ class CartController extends MainSiteController
     public function update(Request $request, $id)
     {
         Cart::update($id,$request->qnty);
+        $watches_count = Watch::where("id", $request->watch_id)->first();
+        $watches_count->topseller_counter = $watches_count->topseller_counter + $request->qnty;
+        $watches_count->save();
         return back();
     }
 

@@ -1,17 +1,22 @@
-<div class="col-md-9 prdt-left">
-		@if(isset($data))  
-			@foreach($data as $k=>$single_item)
+<div class="col-md-12 prdt-left">
+
+	<h2 >
+		<p class='text-left'>Хиты продаж</p>
+	</h2>
+
+		@if(isset($products))  
+
+			@foreach($products as $k=>$single_item)
 				@if($k==0 || $k%3 == 0)
 					<div class="product-one"> 
 				@endif
-
-					<div class="col-md-4 product-left p-left">
+				<div class="col-md-4 product-left p-left">
 						<div class="product-main simpleCart_shelfItem each-item">
 							<a href="{{ route('single_item', ['id' =>$single_item->id]) }}"   class="mask">
 
 							 
 							  
-{{ Html::image('assets/images/'.$single_item->sex.'/'. $single_item->alias .'/'.$single_item->vendor_code.'/thm/'. $single_item->image,'alt=',['class'=>'img-responsive zoom-img']) }}</a>
+{{ Html::image('assets/images/'.$single_item->sex.'/'. $single_item->alias .'/'.$single_item->vendor_code.'/thm/'. $single_item->vendor_code.'_thm.jpg','alt=',['class'=>'img-responsive zoom-img']) }}</a>
 
 
 				<div class="product-bottom">
@@ -43,3 +48,12 @@
 		<div class="clearfix"></div>
  
 	<!-- product-end -->
+
+<style>
+
+	h2
+	{
+		font-family: 'Cuprum', sans-serif;
+	}
+
+</style>

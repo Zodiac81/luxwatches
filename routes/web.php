@@ -19,8 +19,9 @@ Route::group(['prefix' => '/admin','middleware'=>['auth','admin']], function() {
     Route::get('/', function() {
         return view('admin.index');
     })->name('admin.index');
-
+    //Route::get('product/delete/{$id}', 'ProductController@destIt')->name('delete_item');
     Route::resource('/product','ProductController');
+
     Route::get('orders/{type?}','OrderController@orders');
     Route::post('toggledeliver/{orderId}','OrderController@toggledeliver')->name('toggle.deliver');
                 

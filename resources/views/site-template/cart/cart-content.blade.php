@@ -21,16 +21,20 @@
 					@if($cartItems)	 
 					
 						@foreach($cartItems as $cartItem)
+						
  							 <tr>
 					        <td>{{ $cartItem->name }}</td>
 					        <td>
 {!! Form::open(['route' =>['cart.update', $cartItem->rowId ], 'method'=>'put']) !!}
-		<select name = "qnty" value="{{ $cartItem->qty }}" class ="qnty">
-	    <option disabled>Выберите количество</option>
-	    <option value="1">1</option>
-	    <option value="2">2</option>
-	    <option value="3">3</option>
-	    </select>
+ <input type="text" style="display:none" name="watch_id" id="watch_id"
+                   value="{{$cartItem->id}} ">
+                   <input type="number" name = "qnty" value="{{ $cartItem->qty }}" class ="qnty" style="width:10%;">
+		<!-- <select name = "qnty" value="{{ $cartItem->qty }}" class ="qnty">
+			    <option disabled>Выберите количество</option>
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+			    </select> -->
     	<input type="submit" class="btn btn-sm btn-default" value="Обновить">			
 {!! Form::close() !!}</td>
 					        <td>{{ $cartItem->price }}</td>

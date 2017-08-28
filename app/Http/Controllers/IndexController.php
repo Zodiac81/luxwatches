@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\TopSeller;
+use App\Watch;
+use App\Image;
 
 class IndexController extends MainSiteController
 {
@@ -14,26 +16,15 @@ class IndexController extends MainSiteController
         $this->template = 'site-template.index';
     }
 
-    public function execute(){
+   /* public function execute(){
+        return $this->renderOutput();								
+    }*/
 
-    	/*$menus    = Menu::all();
+public function execute(){
+     $image=Image::all();
 
-    	$navMenu = [];
-    	foreach ($menus as $menu) {
-    		$item = [
-    			'title' => $menu->title,
-	            'path' => $menu->path,
-	            'parent' => $menu->parent
-    		];
+        $products = Watch::orderBy('topseller_counter', 'desc')->take(3)->get();
+        return $this->renderOutput()->with(['products'=>$products, ]);
 
-    	array_push($navMenu, $item);
-
-    	}*/
-//dd($navMenu);
-
-
-    	/*return view('site-template.index', ['menu'=>$navMenu,]);*/
-        return $this->renderOutput();
-										
     }
 }

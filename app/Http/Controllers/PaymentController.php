@@ -46,6 +46,7 @@ class PaymentController extends MainSiteController
 		
 		
 		Order::createOrder();
+		Session::flash('success', "Поздравляем. Заказ оформен успешно.")
 		return redirect()->route('home');
     	
     	

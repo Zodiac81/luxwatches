@@ -12,7 +12,8 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a href="{{route('product.create')}}">Добавить товар</a></li>
+                    <li><a class='glyphicon glyphicon-plus' style="padding-left: 33px;" href="{{route('product.create')}}">Добавить товар</a></li>
+                    <li><a class='glyphicon glyphicon-list-alt' style="padding-left: 33px;" href="{{route('product.index')}}">Список товаров</a></li>
                 </ul>
             </li>
             <li class="submenu">

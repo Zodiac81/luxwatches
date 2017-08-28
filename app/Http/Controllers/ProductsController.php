@@ -25,4 +25,6 @@ class ProductsController extends MainSiteController
     else(abort(404));
 
     }
+
+    
 }

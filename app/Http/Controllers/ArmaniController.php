@@ -15,7 +15,6 @@ class ArmaniController extends MainSiteController
         parent::__construct();
         $this->template = 'site-template.item-list';
         $this->breadcrumbs = 'Armani';
-        
     }
 
     public function showArmani(){
@@ -23,20 +22,12 @@ class ArmaniController extends MainSiteController
 
 	if(view()->exists('site-template.item-list')){
 
-	
            $data = DB::table('watches')
                     ->leftJoin('images','watches.id','=','images.watches_id')
                     ->select(  'watches.*',
                                'images.image')
                     ->where('image_thm','thumbnails')
-
                     ->paginate(9);
-
-             
-
-
-     // dump($data);
-
 
     	return $this->renderOutput()->with(['data'=>$data,]);
     }

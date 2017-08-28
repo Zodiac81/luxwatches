@@ -1,9 +1,13 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://use.fontawesome.com/fc9b7797b0.js"></script>
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
-<script src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="{{asset('assets/js/bootstrap.js')}}"> </script>
+
+<script src="{{asset('assets/js/jquery.dataTables.min.js')}}"> </script>
+<script src="{{asset('assets/js/dataTables.bootstrap.min.js')}}"> </script>
+<script src="{{asset('assets/js/dataTables.responsive.min.js')}}"> </script>
 <!--start-menu-->
 <script src="{{asset('assets/js/simpleCart.min.js')}}"> </script>
 <script type="text/javascript" src="{{asset('assets/js/memenu.js')}}"></script>
@@ -82,3 +86,4 @@ $(document).ready(function(){
 					
 				</script>		
 <!-- /FlexSlider -->
+
