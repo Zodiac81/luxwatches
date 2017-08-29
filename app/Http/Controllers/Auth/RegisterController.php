@@ -68,6 +68,8 @@ class RegisterController extends Controller
             'login' => $data['login'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+			
         ]);
+		Session::flash('success','Поздравляем, Вы успешно зарегистрировались.');
     }
 }

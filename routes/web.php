@@ -35,10 +35,10 @@ Route::get('/', [
     	'as'  =>'home',
     	]);
 
-/*Route::get('/login', [
-		'uses'=>'LoginController@execute', 
-    	'as'  =>'login',
-		]);*/
+//Route::get('/login', [
+	//	'uses'=>'LoginController@execute', 
+    //	'as'  =>'login',
+		//]);
 
 /*Route::get('/register', [
 		'uses'=>'RegisterController@execute', 

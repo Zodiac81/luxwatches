@@ -24,7 +24,7 @@
 					
 						@foreach($filters as $k=>$filter)
 							
-							   <label class="checkbox filter-button"><input type="checkbox" name="{{ $filter }}" checked="" data-filter="{{ $filter }}"><i></i>{{ $filter }}</label>
+							   <label class="checkbox filter-button"><input type="checkbox" name="{{ $filter }}"  data-filter="{{ $filter }}"><i></i>{{ $filter }}</label>
 	
 						@endforeach	
 				@endif				
