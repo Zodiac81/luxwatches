@@ -37,4 +37,7 @@
                    	 
     	@endforeach
     </ol>
+	<div class="form-group text-right">
+        <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+    </div>
 @endsection

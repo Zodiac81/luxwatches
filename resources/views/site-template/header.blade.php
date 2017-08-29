@@ -29,8 +29,13 @@
                                 </a>
 
                             <ul class="dropdown-menu" role="menu">
+								@if(Auth::user()->login == 'Admin')
+									 <li>
+                                        <a href="{{ route('admin.index') }}">Админпанель</a>
+									</li>
+								@endif
                                 <li>
-                                        <a href="{{ route('logout') }}"> Личный кабинет</a>
+                                        <a href="#"> Личный кабинет</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"

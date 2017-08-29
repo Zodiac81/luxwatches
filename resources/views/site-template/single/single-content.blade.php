@@ -12,7 +12,7 @@
 
 
 
-<li data-thumb = "{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >
+<li data-thumb = "/assets/images/{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >
 
 <!-- <li data-thumb=" public/assets/images/man/armani/AR0431/preview/ar0431.jpg " >
 						 -->						

@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="{{asset('assets/css/admin.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/dataTables.bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.min.css') }}">
+	
+	<style>
+	.bg-img{
+		background-image:url('/public/assets/images/05.png');
+	}
+	</style>
 </head>
 <body>
 @include('admin.layout.includes.header')
-<div class="page-content">
+<div class="page-content bg-img">
     @include('layouts.messages')
     <div class="row">
         @include('admin.layout.includes.sidenav')
-        <div class="col-md-10 display-area">
+        <div class="col-md-9 display-area">
             <div class="row text-center">
-                <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-12">
                     <div class="content-box-large">
                         @yield('content')
                     </div>

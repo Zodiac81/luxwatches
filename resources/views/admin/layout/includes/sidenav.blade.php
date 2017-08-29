@@ -1,5 +1,5 @@
 {{-- Side Navigation --}}
-<div class="col-md-2">
+<div class="col-md-3">
     <div class="sidebar content-box" style="display: block;">
         <ul class="nav">
             <!-- Main menu -->
@@ -12,8 +12,15 @@
                 </a>
                 <!-- Sub menu -->
                 <ul>
-                    <li><a class='glyphicon glyphicon-plus' style="padding-left: 33px;" href="{{route('product.create')}}">Добавить товар</a></li>
-                    <li><a class='glyphicon glyphicon-list-alt' style="padding-left: 33px;" href="{{route('product.index')}}">Список товаров</a></li>
+					<li>
+						<a class='glyphicon glyphicon-list-alt' style="padding-left: 33px;" href="{{route('product.index')}}">Список товаров
+						</a>
+					</li>
+                    <li>
+						<a class='glyphicon glyphicon-plus' style="padding-left: 33px;" href="{{route('product.create')}}">Добавить товар
+						</a>
+					</li>
+                    
                 </ul>
             </li>
             <li class="submenu">
