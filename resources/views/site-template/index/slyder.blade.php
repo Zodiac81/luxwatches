@@ -1,5 +1,5 @@
 <!-- слайдер -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="3000">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="3000" style="width:60%;margin:0 auto;">
   <!-- Указатели -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>

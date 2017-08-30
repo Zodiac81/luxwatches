@@ -24,7 +24,7 @@ class SingleController extends MainSiteController
 
      	 if(view()->exists('site-template.single')){
 
-            $data = DB::table('watches')
+            $dataItem = DB::table('watches')
                     ->leftJoin('images','watches.id','=','images.watches_id')
                     ->select(  'watches.*',
                                'images.image')
@@ -32,7 +32,7 @@ class SingleController extends MainSiteController
                     ->where('watches_id',$id)
                     ->get();
 
-                 return $this->renderOutput()->with(['data'=>$data,]);
+                 return $this->renderOutput()->with(['data'=>$dataItem,]);
             }
    
      

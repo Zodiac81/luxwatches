@@ -1,7 +1,7 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script src="https://use.fontawesome.com/fc9b7797b0.js"></script>
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
-<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
+<script src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="{{asset('assets/js/bootstrap.js')}}"> </script>
 
@@ -14,7 +14,7 @@
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 <!--dropdown-->
 <script src="{{asset('assets/js/jquery.easydropdown.js')}}"></script>
-<script src="{{asset('assets/js/scripts.js')}}"></script>
+{{--<script src="{{asset('assets/js/scripts.js')}}"></script>--}}
 <!-- Payment -->
 <script src="{{asset('assets/js/payment.js')}}"></script>
 
