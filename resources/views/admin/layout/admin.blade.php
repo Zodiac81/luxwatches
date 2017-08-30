@@ -24,6 +24,9 @@
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="content-box-large">
+                        <div class="logo">
+                            <a href="{{ route('home') }}"><img src="{{asset('assets/images/logo_265x145.png')}}" alt="logoImg"></a>
+                        </div>
                         @yield('content')
                     </div>
                 </div>

@@ -71,8 +71,14 @@ class CartController extends MainSiteController
     public function edit($id)
     {
         $order_watch = Watch::find($id);
+        if($order_watch->discount > 0){
+            $discount = floor(($order_watch->price/100)*$order_watch->discount);
+            $newPrice = ($order_watch->price)-$discount;
+        }else{
+            $newPrice = $order_watch->price;
+        }
        
-        Cart::add($id, $order_watch->title, 1, $order_watch->price); 
+        Cart::add($id, $order_watch->title, 1, $newPrice);
         return back();
     }
 
@@ -101,7 +107,6 @@ class CartController extends MainSiteController
     public function destroy($id)
     {
 
-        //dd('delete');
         Cart::remove($id);
         return back();
     }

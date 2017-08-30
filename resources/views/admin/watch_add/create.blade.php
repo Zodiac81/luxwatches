@@ -22,12 +22,22 @@
                 {{ Form::text('alias', null, ['class' => 'form-control']) }}
             </div>
 
+            <div class="form-group">
+                {{ Form::label('sex', 'Категория') }}
+                <select name="category" id="category" class="form-control">
+                    <option value="" selected disabled>Выберите категорию</option>
+                    <option value="male">мужские</option>
+                    <option value="female">женские</option>
+                    <option value="child">детские</option>
+                </select>
+
+            </div>
+
              <div class="form-group">
                 {{ Form::label('price', 'Цена') }}
                 {{ Form::text('price', null, ['class' => 'form-control']) }}
             </div>
 
-           
             <div class="form-group">
                 {{ Form::label('image', 'Image') }}
                 {{ Form::file('image',array('class' => 'form-control')) }}

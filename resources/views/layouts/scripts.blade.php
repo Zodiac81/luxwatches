@@ -1,4 +1,4 @@
-<script src="https://js.stripe.com/v3/"></script>
+{{--<script src="https://js.stripe.com/v3/"></script>--}}
 <script src="https://use.fontawesome.com/fc9b7797b0.js"></script>
 <!--jQuery(necessary for Bootstrap's JavaScript plugins)-->
 <script src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>

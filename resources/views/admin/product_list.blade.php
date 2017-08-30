@@ -12,20 +12,29 @@
             <th>Название</th>
             <th>Бренд</th>
             <th>Цена</th>
+            <th>Скидка</th>
+            <th>Цена со скидкой</th>
             <th>Редактировать\Удалить</th>
             </thead>
             <tbody>
             @if(isset($products))
             <?php $counter = 1; ?>
                 @foreach($products as $product)
-
+                    <?php   $discount = floor(($product->price/100)*$product->discount);?>
                     <tr id="{{ $product->id }}">
                     	<th>{{ $product->id }} </th>
                         <th>{{ $product->vendor_code }}</th>
                         <td>{{ $product->title }}</td>
                         <td>{{ $product->alias }}</td>
-                        <td>{{ $product->price }}</td>
-                       
+                        <td>{{ $product->price }}грн</td>
+                        @if(!empty($product->discount))
+                            <td>{{ $product->discount }}%</td>
+                            @else
+                            <td>{{'Скидки нет'}}</td>
+                        @endif
+
+                        <td>{{ ($product->price)-$discount}} грн</td>
+
                         <td class="text-center">
                        
                         <a style="float: left; margin-left: 45px; width:60px;" href="{{ route('product.edit', $product->id) }}" class="btn btn-info" style="margin-right: 10%;"><i class="glyphicon glyphicon-edit"></i></a>

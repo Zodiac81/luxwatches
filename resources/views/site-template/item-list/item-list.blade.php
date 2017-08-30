@@ -17,13 +17,25 @@
 				<div class="product-bottom">
 					<h3>{{$single_item->alias}}</h3>
 					<h6>{!!$single_item->title!!}</h6>
-					<h4><a class="item_add" href="#"><i></i></a> 
-					<span class=" item_price">{{$single_item->price}} грн.</span></h4>
+					@if( $single_item->discount > null)
+                        <?php   $discount = floor(($single_item->price/100)*$single_item->discount);?>
+						<h4>
+							<i></i>
+							<span class=" item_price"><strike>{{$single_item->price}}</strike> грн.</span><br>
+							<span class=" item_price_disc">Новая цена {{ ($single_item->price)-$discount}} грн.</span>
+						</h4>
+					@else
+						<h4>
+							<i></i>
+							<span class=" item_price">{{$single_item->price}} грн.</span>
+						</h4>
+					@endif
+
 					<div class=" status-{{$single_item->status}} status"></div>	
 				</div>
 						@if( $single_item->discount > null)
 						<div class="srch srch1">
-								<span>{{ $single_item->discount }}</span>
+								<span>-{{ $single_item->discount }}%</span>
 						</div>
 						@endif
 							</div>
@@ -39,7 +51,7 @@
 		@endif
 	</div>
 </div>	
-<div class="text-center" ">
+<div class="text-center">
 	{{ $data->links() }}
 </div>
 

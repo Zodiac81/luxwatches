@@ -16,7 +16,7 @@
 
 @section('content')
 
-<h2>Адрес доставки</h2>
+<h2 style="font-family:cursive; ">Адрес доставки</h2>
 
 @if(count($errors) > 0)
   <div class="alert alert-danger">
@@ -45,7 +45,7 @@
 
             <div class="form-group">
                 {{ Form::label('house','Номер дома') }}<br>
-                {{ Form::text('house',null, ['class' => 'col-xs-4']) }}
+                {{ Form::number('house',null, ['class' => 'col-xs-4']) }}
             </div>
 
              <div class="form-group">
@@ -65,7 +65,7 @@
 
              <div class="form-group">
                 {{ Form::label('zip','Индекс') }}<br>
-                {{ Form::text('zip',null, ['class' => '3']) }}
+                {{ Form::number('zip',null, ['class' => '3']) }}
             </div>
 
             <div class="form-group">

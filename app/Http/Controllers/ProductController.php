@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use App\Watch;
+use App\Image;
 use DB;
 use Session;
 
@@ -104,17 +105,16 @@ class ProductController extends MainSiteController
     public function update(Request $request, $id)
     {
         if(!empty($request->_token)){
-           /*echo"<pre>";
- print_r($request->all());
- exit;*/
+
             $update_item = Watch::where('id', $id)->first();
-  
+
                 if($update_item){
 
                     $update_item->vendor_code = $request->vendor_code;
                     $update_item->title = $request->title;
                     $update_item->alias = $request->alias;
                     $update_item->price = $request->price;
+                    $update_item->discount = $request->discount;
 
                     $update_item->save();
       
@@ -127,7 +127,7 @@ class ProductController extends MainSiteController
                         return redirect()->route('product.index');
                 }
 
-}
+        }
     }
 
     /**

@@ -2,18 +2,17 @@
 <div class="ckeckout">
 	<div class="container">
 	    <div class="ckeck-top heading">
-			<h2>Корзина</h2>
+			<h2 style="font-family: cursive">Корзина</h2>
 		</div> 
 <div class="ckeckout-top">
 	<div class="cart-items">
-		<h3>В корзине</h3>	          
 			<table class="table">
 					    <thead>
 					      <tr>
 					       
 					        <th>Наименование</th>
 					        <th>Количество</th>
-					        <th>Цена</th>
+					        <th style="width: 260px;">Цена</th>
 					      </tr>
 					    </thead>
 					    <tbody>
@@ -28,7 +27,7 @@
 {!! Form::open(['route' =>['cart.update', $cartItem->rowId ], 'method'=>'put']) !!}
  <input type="text" style="display:none" name="watch_id" id="watch_id"
                    value="{{$cartItem->id}} ">
-                   <input type="number" name = "qnty" value="{{ $cartItem->qty }}" class ="qnty" style="width:10%;">
+                   <input type="number" min='0' name = "qnty" value="{{ $cartItem->qty }}" class ="qnty" style="width:10%;">
 		<!-- <select name = "qnty" value="{{ $cartItem->qty }}" class ="qnty">
 			    <option disabled>Выберите количество</option>
 			    <option value="1">1</option>
@@ -54,8 +53,8 @@
 
 							<tr> 
 							<td></td>
+							<td ><strong>Товаров в корзине:</strong> {{ Cart::count() }} <strong>шт.</strong></td>
 							<td><strong>Всего к оплате: </strong> {{ Cart::subtotal() }} <strong>грн.</strong></td>
-							<td class="product_count"><strong>Товаров в корзине:</strong> {{ Cart::count() }} <strong>шт.</strong></td>
 							</tr>	
 					    </tbody>
 					  </table>

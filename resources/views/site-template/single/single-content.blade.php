@@ -4,6 +4,7 @@
 		<div class="single-main">
 			<div class="col-md-9 single-main-left">
 				<div class="sngl-top">
+
 					<div class="col-md-5 single-top-left">	
 @if(isset($data) && is_object($data))					
 						<div class="flexslider">
@@ -31,38 +32,14 @@
 							</ul>
 						</div>
 
-
-
-										<li data-thumb = "{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >
-
-											<!-- <li data-thumb=" public/assets/images/man/armani/AR0431/preview/ar0431.jpg " >
-                                                                     -->
-											<div class="thumb-image">
-												{{ Html::image('assets/images/'.$data->sex.'/'.
-                                                                                $data->alias .'/'.
-                                                                                $data->vendor_code.'/preview/'.
-                                                                                $data->image,'preview',
-                                                                                ['class'=>'img-responsive', 'data-imagezoom'=>'true',]
-                                                                )
-                                                }}
-											</div>
-										</li>
-
-
-
-								@endforeach
-								</ul>
-
-					</div><div>
-								<img src="{{asset('assets/images/man/armani/ar0431/preview/ar0431.jpg')}}">
-							</div>
+					</div>
 				</div>
 
 				<div class="col-md-7 single-top-right">
-					<div class="single-para simpleCart_shelfItem">
+					<div class="single-para simpleCart_shelfItem" style="width: 105%;">
 
-						<h2>{{ $data->alias }}</h2>
-						<h3>{!! $data->title !!}</h3>
+						<h2 style="font-family: cursive">{{ $data->alias }}</h2>
+						<h3 style="font-family: cursive">{!! $data->title !!}</h3>
 						<div class="star-on">
 							<ul class="star-footer">
 								<li><a href="#"><i> </i></a></li>
@@ -71,33 +48,42 @@
 								<li><a href="#"><i> </i></a></li>
 								<li><a href="#"><i> </i></a></li>
 							</ul>
-							<div class="review">
-								<a href="#"> 1 customer review </a>
 
-							</div>
 							<div class="clearfix"> </div>
 						</div>
-
-						<h5 class="item_price"><h2>{{ $data->price }} грн.</h2></h5>
+						@if( $data->discount > null)
+                            <?php   $discount = floor(($data->price/100)*$data->discount);?>
+							<h5>
+								<i></i>
+								<span class=" item_price" style="margin-right:10px;font-family: cursive"><strike>{{$data->price}}</strike> грн.</span>
+								<span class=" item_price_disc" style="font-family: cursive">Новая цена {{ ($data->price)-$discount}} грн.</span>
+							</h5>
+						@else
+							<h5>
+								<i></i>
+								<span style="font-family: cursive" class=" item_price">{{$data->price}} грн.</span>
+							</h5>
+						@endif
+						{{--<h5 class="item_price"><h2>{{ $data->price }} грн.</h2></h5>--}}
 
 						<ul class="tag-men">
-							<li><span>Наличие</span>
+							<li><span style="font-family: cursive">Наличие</span>
 								@if($data->status == 0 )
-									<span class="women1">: Нет в наличии</span></li>
+									<span class="women1" style="font-family: cursive">: Нет в наличии</span></li>
 							@endif
 							@if($data->status == 1 )
-								<span class="women1">: Ожидается</span></li>
+								<span class="women1" style="font-family: cursive">: Ожидается</span></li>
 							@endif
 							@if($data->status == 2 )
-								<span class="women1">: Есть на складе</span></li>
+								<span class="women1" style="font-family: cursive">: Есть на складе</span></li>
 							@endif
 
 						</ul>
 
 						@if($data->status == 0 || $data->status == 1)
-							<a class ="btn btn-default btn-xl p_a2c" style="opacity:0.5;" href="#">Добавить в корзину</a>
+							<a class ="btn btn-default btn-xl p_a2c" style="opacity:0.5;" href="#" style="margin-top:22px;">Добавить в корзину</a>
 						@else
-							<a class ="btn btn-default btn-xl p_a2c" href="{{ route('cart.edit', $data->id) }}">Добавить в корзину</a>
+							<a class ="btn btn-default btn-xl p_a2c" style="margin-top:22px;" href="{{ route('cart.edit', $data->id) }}">Добавить в корзину</a>
 					@endif
 
 					<!-- <form action="" method='post' class='buy_btn'>
@@ -117,27 +103,27 @@
 				<div id="p_desc_wrap" itemprop="description" style="width:100%">
 
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Артикул:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Артикул:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val" itemprop="sku">{{ $data->vendor_code }}</div>
 					</div>
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Бренд:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Бренд:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val" itemprop="brand">{{ $data->alias }}</div>
 					</div>
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Пол:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Пол:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val">{{ $data->sex }} </div>
 					</div>
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Страна бренда:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Страна бренда:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val">{{ $data->brend_country }} </div>
 					</div>
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Гарантия:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Гарантия:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val">{{ $data->guarantee }}</div>
 					</div>
 					<div class="p_param_wrap row">
-						<div class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Серия:</div>
+						<div style="font-family: cursive" class="col-xs-4 col-sm-3 col-md-3 col-lg-4 p_param_name">Серия:</div>
 						<div class="col-xs-8 col-sm-9 col-md-9 col-lg-8 p_param_val">{{ $data->series }}</div>
 					</div>
 					{{--<div class="p_param_wrap row">

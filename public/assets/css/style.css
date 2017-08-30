@@ -3,6 +3,7 @@ body{
 	background:#fff;
 	font-family: 'Lato-Regular';
 	font-family: 'Cuprum', sans-serif;
+
 }
 body a{
 	transition: 0.5s all;
@@ -717,10 +718,11 @@ figure.effect-bubba:hover p,figure.effect-bubba:hover h2 {
 .product-one {
 	margin-bottom:30px;
 }
+
 .status{
 	position: relative;
     top: 12px;
-    left: 70px;
+    left: 30px;
 	display: inline-block;
     height: 0.85em;
     width: 0.85em;   
@@ -1589,9 +1591,9 @@ a.mask {
 	height:30px;
 }
 
-.product_count{
+#product_count{
 	display: inline-block;
-    width: 200px;
+    width: 260px;
 }
 
 .close1,.close2,.close3{

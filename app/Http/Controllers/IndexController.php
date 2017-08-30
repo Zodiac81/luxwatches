@@ -24,7 +24,7 @@ public function execute(){
      $image=Image::all();
 
         $products = Watch::orderBy('topseller_counter', 'desc')->take(3)->get();
-        return $this->renderOutput()->with(['products'=>$products, ]);
+        return $this->renderOutput()->with(['products'=>$products, 'images'=>$image]);
 
     }
 }

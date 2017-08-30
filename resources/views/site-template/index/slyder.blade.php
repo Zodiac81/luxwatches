@@ -25,7 +25,7 @@
     <div class="item">
       <img class ="img_width" src="{{asset('assets/images/bnr-3.jpg')}}" alt="banner3">
       <div class="carousel-caption">
-        <h3>Самые надежные швейцарские часы, побывавшие в Марианской впадине и на Эвересте</h3>
+        <h3 style="font-family: cursive">Самые надежные швейцарские часы, побывавшие в Марианской впадине и на Эвересте</h3>
 		<span class="btn btn-danger text-left">Узнать больше</span>
       </div>
     </div>
@@ -48,7 +48,7 @@
   <div class="about"> 
     <div class="container">
 	<hr><br>
-	<h2>Блог о часах</h2>
+	<h2 style="font-family: cursive">Новинки в мире часов</h2>
 	<br><br>
       <div class="about-top grid-1">
         <div class="col-md-4 about-left">

@@ -27,7 +27,12 @@
 
              <div class="form-group">
                  <label for='price'>Цена</label>
-                <input type="text" class='form-control' name='price' value='@if(isset($product->price )) {{ $product->price }} @endif' required="">
+                <input type="number" class='form-control' min='0' name='price' placeholder='@if(isset($product->price )) {{ $product->price }} @endif' required="">
+            </div>
+
+            <div class="form-group">
+                 <label for='price'>Скидка</label>
+                <input type="number" class='form-control' min='0' name='discount' placeholder='@if(isset($product->discount )) {{ $product->discount }} @endif'>
             </div>
 
             <div class="form-group">
