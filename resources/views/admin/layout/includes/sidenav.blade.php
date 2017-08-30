@@ -1,6 +1,6 @@
 {{-- Side Navigation --}}
 <div class="col-md-3">
-    <div class="sidebar content-box" style="display: block;">
+    <div class="sidebar content-box" style="display: block; min-height: 188px;">
         <ul class="nav">
             <!-- Main menu -->
             <li class="current"><a href="{{route('admin.index')}}"><i class="glyphicon glyphicon-home"></i>
@@ -34,6 +34,12 @@
                     <li><a href="{{url('admin/orders/delivered')}}">Отправленные</a></li>
                     <li><a href="{{url('admin/orders')}}">Все заказы</a></li>
                 </ul>
+            </li>
+			 <li>
+                <a href="{{route('message_list')}}">
+                    <i class="glyphicon glyphicon-list"></i> Сообщения пользователей
+                   
+                </a>
             </li>
         </ul>
     </div>

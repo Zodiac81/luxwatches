@@ -66,8 +66,14 @@
 </script>
 <!-- DataTab -->
 <script>
-$(document).ready(function () {
+
+	$(document).ready(function () {
         $('#tbproduct').DataTable(
+            {"bPaginate": true});
+    });
+	
+	$(document).ready(function () {
+        $('#tbmessage').DataTable(
             {"bPaginate": true});
     });
 
@@ -87,14 +93,47 @@ $(document).ready(function () {
 });*/
 
     $('table[data-form="deleteForm"]').on('click', '.form-delete', function(e){
-    e.preventDefault();
-    var $form=$(this);
-    console.log($form);
-    $('#confirm').modal({ backdrop: 'static', keyboard: false })
-        .on('click', '#delete-btn', function(){
+		e.preventDefault();
+		var $form=$(this);
+		console.log($form);
+		$('#confirm').modal({ backdrop: 'static', keyboard: false })
+			.on('click', '#delete-btn', function(){
             $form.submit();
         });
+	});  
+
+	$('table[data-form="tbmessage"]').on('click', '.message-delete', function(e){
+		console.log('1');
+		e.preventDefault();
+		var $form=$(this);
+		console.log($form);
+		$('#deleteMess').modal({ backdrop: 'static', keyboard: false })
+			.on('click', '#deleteMess-btn', function(){
+				$form.submit();
+			});
+	});
+</script>
+
+<script>
+
+
+	//$('#clientMessage').hide();
+	//$(".readMessage").click(function(){
+	//	if($('#clientMessage').hide()){
+		//	$('#clientMessage').show();
+		//}else{
+		//	$('#clientMessage').hide();
+		//}
+	//});
+
+$(".readMessage").on('click', function(){
+	 $('#message').modal({ backdrop: 'static', keyboard: false })
+        .on('click', '#delete-btn', function(){
+            console.log('success')
+        });
 });
+
+
 </script>
 
 

@@ -36,7 +36,7 @@
 				</div>
 
 				<div class="col-md-7 single-top-right">
-					<div class="single-para simpleCart_shelfItem" style="width: 105%;">
+					<div class="single-para simpleCart_shelfItem" style="width: 115%;">
 
 						<h2 style="font-family: cursive">{{ $data->alias }}</h2>
 						<h3 style="font-family: cursive">{!! $data->title !!}</h3>
@@ -83,7 +83,11 @@
 						@if($data->status == 0 || $data->status == 1)
 							<a class ="btn btn-default btn-xl p_a2c" style="opacity:0.5;" href="#" style="margin-top:22px;">Добавить в корзину</a>
 						@else
-							<a class ="btn btn-default btn-xl p_a2c" style="margin-top:22px;" href="{{ route('cart.edit', $data->id) }}">Добавить в корзину</a>
+						<a class ="btn btn-default btn-xl p_a2c" style="margin-top:22px;" href="{{ route('cart.edit', $data->id) }}">
+							Добавить в корзину
+						</a>
+						
+						
 					@endif
 
 					<!-- <form action="" method='post' class='buy_btn'>

@@ -4,21 +4,21 @@
 	    <div class="ckeck-top heading">
 			<h2 style="font-family: cursive">Корзина</h2>
 		</div> 
+		
+
+	@if(!empty($cartItems))
 <div class="ckeckout-top">
-	<div class="cart-items">
+	<div class="cart-items">	
 			<table class="table">
 					    <thead>
 					      <tr>
-					       
 					        <th>Наименование</th>
 					        <th>Количество</th>
 					        <th style="width: 260px;">Цена</th>
 					      </tr>
 					    </thead>
 					    <tbody>
-					     
-					@if($cartItems)	 
-					
+					    
 						@foreach($cartItems as $cartItem)
 						
  							 <tr>
@@ -43,14 +43,9 @@
 					{{ method_field('DELETE') }}
 
 					<td><input type="submit" class="btn btn-danger" value ="Удалить"></td>
-
 				</form>
-
 					      </tr>	
 					    @endforeach
-
-					@endif	
-
 							<tr> 
 							<td></td>
 							<td ><strong>Товаров в корзине:</strong> {{ Cart::count() }} <strong>шт.</strong></td>
@@ -60,9 +55,16 @@
 					  </table>
     		</div>
 		</div>
-
+<td>
+        <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+    </td>
 	<td><a href="{{ route('shipping')}}"><button type="button" class="btn btn-primary">Оформить заказ</button></a></td>	
 	</div>
+	@else
+		<p><h2>Корзина пуста. Купите что-нибудь.</h2></p>
+	
+	
+	@endif
 </div>
 <!--end-ckeckout-->
 

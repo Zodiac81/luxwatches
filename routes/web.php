@@ -15,9 +15,9 @@
 Auth::routes();
 
 Route::group(['prefix' => '/admin','middleware'=>['auth','admin']], function() {
-
-    Route::get('/', function() {
-        return view('admin.index');
+	Route::get('messages', 'MessageController@index')->name('message_list');
+	Route::post('messages/{$id}', 'MessageController@destroy')->name('message_destroy');
+    Route::get('/', function() {return view('admin.index');
     })->name('admin.index');
     //Route::get('product/delete/{$id}', 'ProductController@destIt')->name('delete_item');
     Route::resource('/product','ProductController');
@@ -50,9 +50,13 @@ Route::get('products', [
                     'as'   => 'products',
                 ]);
 
-Route::match(['get','post'], '/contact', [
+Route::get('/contact', [
         'uses'=>'ContactController@showForm', 
         'as'  =>'contact',
+        ]);
+Route::post('/contact', [
+        'uses'=>'ContactController@getMessage', 
+        'as'  =>'send_message',
         ]);
 
 

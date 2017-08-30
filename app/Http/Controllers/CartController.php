@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Watch;
 use Cart;
-
+use Session;
 use Illuminate\Http\Request;
 
 class CartController extends MainSiteController
@@ -79,6 +79,7 @@ class CartController extends MainSiteController
         }
        
         Cart::add($id, $order_watch->title, 1, $newPrice);
+		Session::flash('success','Товар добавлен в корзину');
         return back();
     }
 

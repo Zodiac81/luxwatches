@@ -2,7 +2,7 @@
 	<div class="contact">
 		<div class="container">
 			<div class="contact-top heading">
-				<h2>CONTACT</h2>
+				<h2 style="font-family:cursive">Обратная связь</h2>
 			</div>
 				<div class="contact-text">
 				<div class="col-md-3 contact-left">
@@ -20,13 +20,14 @@
 						</div>
 					</div>
 					<div class="col-md-9 contact-right">
-						<form>
-							<input type="text" placeholder="Name">
-							<input type="text" placeholder="Phone">
-							<input type="text"  placeholder="Email">
-							<textarea placeholder="Message" required=""></textarea>
+						<form method="post"  id="contactUs">
+							{{ csrf_field() }}
+							<input type='hidden' name="contactUsForm" value="key">
+							<input type="text" style="margin:0px" name="name" placeholder="Имя" required="">
+							<input type="text"  name="email" placeholder="Email" required="">
+							<textarea placeholder="Ваше сообщение" name="message" required=""></textarea>
 							<div class="submit-btn">
-								<input type="submit" value="SUBMIT">
+								<input type="submit" value="Отправить">
 							</div>
 						</form>
 					</div>	
