@@ -382,6 +382,7 @@ footer .copy {
 
 body {
     background-color: #eff0f3;
+	
 }
 
 /** Login & Signup **/
@@ -684,3 +685,8 @@ body {
     text-align: left;
     font-weight: bold;
 }
+
+#tbproduct th{
+    text-align: center;
+}
+

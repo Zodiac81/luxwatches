@@ -139,11 +139,21 @@ class ProductController extends MainSiteController
 
     public function destroy($id)
     {
-        echo ('hodefhgofehgohnsol;ghn');
-       $deleteWatch = Watch::find($id);
-       $deleteWatch->delete();
+       if($id){
+           $deleteWatch = Watch::find($id);
+           $deleteWatch->delete();
+           $value = "Товар удален.";
+           Session::flash('success', $value);
 
-       return redirect()->route('admin.index');
+           return redirect()->route('product.index');
+           
+       }else{
+           $value = "Что-то пошло не так. Попробуйте ещё раз.";
+           Session::flash('alert', $value);
+
+           return redirect()->route('product.index');
+       }
+      
        
         
     }

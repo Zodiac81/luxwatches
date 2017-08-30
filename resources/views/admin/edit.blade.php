@@ -34,10 +34,14 @@
                  <label for='file'>Изображение</label>
                 <input type="file" class='form-control' name='file' value='@if(isset($product->title )) {{ $product->title }} @endif'>
             </div>
-
-            <button type="submit" class='btn btn-default'>Обновить</button>
+            <div class="form-group text-right">
+                <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+                <button type="submit" class='btn btn-default'>Обновить</button>
+            </div>
+           
             </form>
-
+            
         </div>
     </div>
+
     @endsection

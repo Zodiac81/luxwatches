@@ -32,8 +32,10 @@
                 {{ Form::label('image', 'Image') }}
                 {{ Form::file('image',array('class' => 'form-control')) }}
             </div>
-
-             {{ Form::submit('Добавить', array('class' => 'btn btn-default')) }}
+            <div class="form-group text-right">
+                <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+                <button type="submit" class='btn btn-default'>Добавить</button>
+            </div>
             {!! Form::close() !!}
 
         </div>

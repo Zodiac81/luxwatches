@@ -21,6 +21,10 @@ class ArmaniController extends MainSiteController
 
 
 	if(view()->exists('site-template.item-list')){
+		
+		//$thumbnails = Watch::first();
+		
+		//echo($thumbnails->images->image_thm)."<br>";
 
            $data = DB::table('watches')
                     ->leftJoin('images','watches.id','=','images.watches_id')

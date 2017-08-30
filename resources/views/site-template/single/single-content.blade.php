@@ -4,11 +4,33 @@
 		<div class="single-main">
 			<div class="col-md-9 single-main-left">
 				<div class="sngl-top">
-					<div class="col-md-5 single-top-left">
-						@if(isset($data) && is_object($data))
-							<div class="flexslider">
-								<ul class="slides">
-									@foreach($data as $data)
+					<div class="col-md-5 single-top-left">	
+@if(isset($data) && is_object($data))					
+						<div class="flexslider">
+							<ul class="slides">
+	@foreach($data as $data)
+
+
+
+<li data-thumb = "/assets/images/{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >
+
+<!-- <li data-thumb=" public/assets/images/man/armani/AR0431/preview/ar0431.jpg " >
+						 -->						
+						 <div class="thumb-image">			
+{{ Html::image('assets/images/'.$data->sex.'/'. 
+								$data->alias .'/'.
+								$data->vendor_code.'/preview/'.
+								$data->image,'preview',
+								['class'=>'img-responsive', 'data-imagezoom'=>'true',] 
+				) 
+}}  	
+						</div>
+</li>	
+									
+	@endforeach							
+							</ul>
+						</div>
+
 
 
 										<li data-thumb = "{{ $data->sex  }}/{{ $data->alias }}/{{ $data->vendor_code }}/preview/{{ $data->image }}" >

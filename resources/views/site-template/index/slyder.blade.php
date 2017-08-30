@@ -1,5 +1,7 @@
 <!-- слайдер -->
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="3000" style="width:60%;margin:0 auto;">
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel"data-interval="3000" style="width:82%; margin:0 auto;">
+
   <!-- Указатели -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -23,7 +25,8 @@
     <div class="item">
       <img class ="img_width" src="{{asset('assets/images/bnr-3.jpg')}}" alt="banner3">
       <div class="carousel-caption">
-        <h3>Выбор редакции</h3>
+        <h3>Самые надежные швейцарские часы, побывавшие в Марианской впадине и на Эвересте</h3>
+		<span class="btn btn-danger text-left">Узнать больше</span>
       </div>
     </div>
     
@@ -40,15 +43,20 @@
 <!-- /слайдер -->
 
 <!--about-starts-->
+
+
   <div class="about"> 
     <div class="container">
+	<hr><br>
+	<h2>Блог о часах</h2>
+	<br><br>
       <div class="about-top grid-1">
         <div class="col-md-4 about-left">
           <figure class="effect-bubba">
             <img class="img-responsive" src="{{asset('assets/images/abt-1.jpg')}}" alt=""/>
             <figcaption>
-              <h2>Nulla maximus nunc</h2>
-              <p>In sit amet sapien eros Integer dolore magna aliqua</p>  
+              <h2>Vintage Nose Art</h2>
+              <p>Graham Chronofighter Vintage Nose Art</p>  
             </figcaption>     
           </figure>
         </div>
@@ -56,8 +64,8 @@
           <figure class="effect-bubba">
             <img class="img-responsive" src="{{asset('assets/images/abt-2.jpg')}}" alt=""/>
             <figcaption>
-              <h4>Mauris erat augue</h4>
-              <p>In sit amet sapien eros Integer dolore magna aliqua</p>  
+              <h4>Mare Nostrum </h4>
+              <p>Panerai Mare Nostrum Acciaio 42mm</p>  
             </figcaption>     
           </figure>
         </div>
@@ -65,8 +73,8 @@
           <figure class="effect-bubba">
             <img class="img-responsive" src="{{asset('assets/images/abt-3.jpg')}}" alt=""/>
             <figcaption>
-              <h4>Cras elit mauris</h4>
-              <p>In sit amet sapien eros Integer dolore magna aliqua</p>  
+              <h4> Chronoliner B04 </h4>
+              <p>Breitling Chronoliner B04 Boutique Edition</p>  
             </figcaption>     
           </figure>
         </div>
@@ -74,4 +82,5 @@
       </div>
     </div>
   </div>
+
   <!--about-end-->

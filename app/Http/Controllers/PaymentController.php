@@ -11,6 +11,7 @@ use Stripe\Error\Stripe_InvalidRequest;
 use Cart;
 use Auth;
 use App\Order;
+use Session;
 
 class PaymentController extends MainSiteController
 {
@@ -29,24 +30,24 @@ class PaymentController extends MainSiteController
     {
 		// Set your secret key: remember to change this to your live secret key in production
 		// See your keys here: https://dashboard.stripe.com/account/apikeys
-		\Stripe\Stripe::setApiKey("sk_test_BA5vPObjv0ubeUxD8EymhZNK");
+		//\Stripe\Stripe::setApiKey("sk_test_BA5vPObjv0ubeUxD8EymhZNK");
 
 		// Token is created using Stripe.js or Checkout!
 		// Get the payment token submitted by the form:
-		$token = $_POST['stripeToken'];
+		//$token = $_POST['stripeToken'];
 		//$token = $request->stripeToken;
 
 		// Charge the user's card:
-		$charge = \Stripe\Charge::create([
-		  "amount" => Cart::total(),
-		  "currency" => "uah",
-		  "description" => "Example charge",
-		  "source" => $token,
-		]);
+		// $charge = \Stripe\Charge::create([
+		//   "amount" => Cart::total(),
+		//   "currency" => "uah",
+		//   "description" => "Example charge",
+		//   "source" => $token,
+		// ]);
 		
 		
-		Order::createOrder();
-		Session::flash('success', "Поздравляем. Заказ оформен успешно.")
+		//Order::createOrder();
+		Session::flash('success', "Поздравляем. Заказ оформен успешно.");
 		return redirect()->route('home');
     	
     	

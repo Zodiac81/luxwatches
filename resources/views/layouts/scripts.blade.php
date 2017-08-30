@@ -14,7 +14,9 @@
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>	
 <!--dropdown-->
 <script src="{{asset('assets/js/jquery.easydropdown.js')}}"></script>
-{{--<script src="{{asset('assets/js/scripts.js')}}"></script>--}}
+
+<!--<script src="{{asset('assets/js/scripts.js')}}"></script>-->
+
 <!-- Payment -->
 <script src="{{asset('assets/js/payment.js')}}"></script>
 
@@ -72,7 +74,7 @@ $(document).ready(function(){
 <!-- Scripts -->
 		
 		<script src="{{asset('assets/js/imagezoom.js')}}"></script>
-		<script defer src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
+		<script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
 		<link rel="stylesheet" href="{{asset('assets/css/flexslider.css')}}" type="text/css" media="screen" />	
 
 				<script>
@@ -86,4 +88,18 @@ $(document).ready(function(){
 					
 				</script>		
 <!-- /FlexSlider -->
+
+<!-- Delete product modal -->
+
+<script>
+	$('table[data-form="deleteForm"]').on('click', '.form-delete', function(e){
+    e.preventDefault();
+    var $form=$(this);
+    $('#confirm').modal({ backdrop: 'static', keyboard: false })
+        .on('click', '#delete-btn', function(){
+            $form.submit();
+        });
+});
+</script>
+
 

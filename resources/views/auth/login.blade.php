@@ -11,14 +11,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Войти</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('login') ? ' has-error' : '' }}">
                             <label for="login" class="col-md-4 control-label">Логин</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control" name="login" value="{{ old('login') }}" required autofocus>
+                                <input id="login" type="text" class="form-control" name="login" value="{{ old('login') }}" required autofocus>
 
                                 @if ($errors->has('login'))
                                     <span class="help-block">

@@ -1,3 +1,4 @@
+<hr>
 <div class="col-md-12 prdt-left">
 
 	<h2 >
@@ -46,6 +47,7 @@
 </div>	
 
 		<div class="clearfix"></div>
+		<hr>
  
 	<!-- product-end -->
 

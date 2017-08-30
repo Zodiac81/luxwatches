@@ -14,6 +14,7 @@
 
 @section('content')
 	@include('site-template.single.single-content')
+	
 @endsection
 
 

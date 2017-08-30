@@ -18,7 +18,7 @@
 					<h3>{{$single_item->alias}}</h3>
 					<h6>{!!$single_item->title!!}</h6>
 					<h4><a class="item_add" href="#"><i></i></a> 
-					<span class=" item_price">{{$single_item->price}}</span></h4>
+					<span class=" item_price">{{$single_item->price}} грн.</span></h4>
 					<div class=" status-{{$single_item->status}} status"></div>	
 				</div>
 						@if( $single_item->discount > null)
@@ -39,6 +39,9 @@
 		@endif
 	</div>
 </div>	
+<div class="text-center" ">
+	{{ $data->links() }}
+</div>
 
 		<div class="clearfix"></div>
  
