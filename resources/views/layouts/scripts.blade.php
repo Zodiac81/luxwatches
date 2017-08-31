@@ -116,7 +116,7 @@ $('#category_filter').change(function(){
            // console.log(values['sex']);
             var url = "{{route('ajax_armani')}}";
             var request = $.param(values);
-            console.log(request);
+           // console.log(request);
 
 
             $.ajaxSetup({
@@ -131,25 +131,20 @@ $('#category_filter').change(function(){
                 url: url,
                 data:request,
                 success: function (data){
-                    console.log(data);
+                    //console.log(data);
                      $('#watches-list').remove();
-						var a = data.query.data['0'];
-						   for (var key in a) {
-    alert( "Ключ: " + key + " значение: " + a[key] );
-								 }
-						
-						// console.log(a);
-						 
-						//
-						
-                    
-				   // $('#watches-list').append();
+						 var a = data.query.data;
+						 console.log (a);
+						  for (var key in a) {
+							  for (var key in a){   
+   console.log(a[key].id)
 
-
-
+}
+						 }  
+				
                 }
 
-            })
+            });
 
 
         });

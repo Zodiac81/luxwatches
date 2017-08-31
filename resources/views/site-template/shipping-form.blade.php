@@ -55,7 +55,7 @@
 
              <div class="form-group">
                 {{ Form::label('zip','Индекс') }}<br>
-                <input type='number' min='0' max='5' class='col-xs-4' name='flat'>
+                <input type='number' min='0' class='col-xs-4' name='zip'>
             </div>
 
             <div class="form-group">
