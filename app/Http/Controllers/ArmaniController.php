@@ -44,10 +44,12 @@ class ArmaniController extends MainSiteController
     public function getCategoryData(Request $request)
     {
 
-        $query=Watch::where('sex',$request->sex['0'])->paginate(9);
+        $query = Watch::where('sex',$request->sex['0'])->paginate(9);
+		return response()->json([
+                "query" => $query,
+            ]);
 
-
-        return $this->renderOutput()->with(['data'=>$query,]);
+        //return $this->renderOutput()->with(['data'=>$query,]);
     }
 
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use Auth;
 
 class OrderController extends MainSiteController
 {
@@ -42,4 +43,10 @@ class OrderController extends MainSiteController
         $order->save();
         return back();
     }
+	
+	public function showOrders(){
+		$id = Auth::id();
+		$userOrdersList = Order::where('user_id',$id)->get();
+		return view('site-template.user_dashboard', compact('userOrdersList'));
+	}
 }

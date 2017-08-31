@@ -39,7 +39,7 @@
                                     </li>
                                 @endif
                                 <li>
-                                        <a href="#"> Личный кабинет</a>
+                                        <a href="{{route('user_orders')}}"> Личный кабинет</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('logout') }}"

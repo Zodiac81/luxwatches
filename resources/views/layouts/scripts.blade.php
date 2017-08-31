@@ -18,7 +18,7 @@
 <!--<script src="{{asset('assets/js/scripts.js')}}"></script>-->
 
 <!-- Payment -->
-<script src="{{asset('assets/js/payment.js')}}"></script>
+ <!--<script src="{{asset('assets/js/payment.js')}}"></script>-->
 
 <!-- Drop menu -->
 <script type="text/javascript">
@@ -127,13 +127,23 @@ $('#category_filter').change(function(){
 
             $.ajax({
                 type:'POST',
-                dataType: 'html',
+                dataType: 'json',
                 url: url,
                 data:request,
                 success: function (data){
                     console.log(data);
-                    $('#watches-list').remove();
-                   $('#watches-list').append(data);
+                     $('#watches-list').remove();
+						var a = data.query.data['0'];
+						   for (var key in a) {
+    alert( "Ключ: " + key + " значение: " + a[key] );
+								 }
+						
+						// console.log(a);
+						 
+						//
+						
+                    
+				   // $('#watches-list').append();
 
 
 

@@ -60,6 +60,7 @@ Route::post('/contact', [
 
 
 Route::group(['middleware'=>'auth',], function(){
+		Route::get('user_dashboard', 'OrderController@showOrders')->name('user_orders');
         Route::resource('/cart','CartController');
        // Route::get('/checkout', 'CheckoutController@step1')->name('checkout');
         Route::get('/shipping-info', 'CheckoutController@shipping')->name('shipping');
