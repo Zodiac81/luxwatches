@@ -103,3 +103,50 @@ $(document).ready(function(){
 </script>
 
 
+<script>
+	{{--Filter--}}
+$('#category_filter').change(function(){
+        $('#category_filter input[type="checkbox"]:checked').each(function(index, element){
+
+            var values={};
+            var sexList = [];
+            var sex = ($(element).data('category'));
+            sexList.push(sex);
+            values['sex'] = sexList;
+           // console.log(values['sex']);
+            var url = "{{route('ajax_armani')}}";
+            var request = $.param(values);
+            console.log(request);
+
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                type:'POST',
+                dataType: 'html',
+                url: url,
+                data:request,
+                success: function (data){
+                    console.log(data);
+                    $('#watches-list').remove();
+                   $('#watches-list').append(data);
+
+
+
+                }
+
+            })
+
+
+        });
+        });
+
+
+</script>
+
+
+

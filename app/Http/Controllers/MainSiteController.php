@@ -30,6 +30,7 @@ class MainSiteController extends Controller
 
       //фильтр товаров
           $filter = DB::table('watches')->distinct()->pluck('alias');
+          $categories = DB::table('watches')->distinct()->pluck('sex');
 
       //вывод меню  
 
@@ -56,6 +57,7 @@ class MainSiteController extends Controller
  return view($this->template,['menu'=>$mBuilder,
                               'breadcrumbs'=>$this->breadcrumbs,
                               'filters'=>$filter,
+                              'categories'=>$categories,
                               ]);
 
 	}

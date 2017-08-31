@@ -1,8 +1,8 @@
-<div class="col-md-9 prdt-left">
+<div id="watches-list" class="col-md-9 prdt-left">
 		@if(isset($data))  
 			@foreach($data as $k=>$single_item)
 				@if($k==0 || $k%3 == 0)
-					<div class="product-one"> 
+					<div class="product-one" id="watch-block">
 				@endif
 
 					<div class="col-md-4 product-left p-left">

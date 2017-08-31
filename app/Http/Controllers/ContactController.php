@@ -12,7 +12,7 @@ class ContactController extends MainSiteController
 	public function __construct(){
         parent::__construct();
         $this->template = 'site-template.contact';
-        $this->breadcrumbs = 'Контакты';
+        $this->breadcrumbs = 'Обратная связь';
     }
     
     public function showForm(){

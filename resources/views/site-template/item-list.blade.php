@@ -10,7 +10,7 @@
 
 @section('breadcrumbs')
 	@include('site-template.breadcrumbs')
-@endsection 
+@endsection
 
 @section('content')
 	@include('site-template.item-list.item-list')

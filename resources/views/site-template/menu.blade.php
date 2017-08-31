@@ -14,7 +14,7 @@
 							<a href="{{route('home')}}">Главная</a>
 						</li>
 						<li class="grid">
-							<a href="{{route('')}}">Каталог</a>
+							<a href="{{url('men\armani')}}">Каталог</a>
 						</li>
 						<li class="grid">
 							<a href="{{route('home')}}">Блог</a>
