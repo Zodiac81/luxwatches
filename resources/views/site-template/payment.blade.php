@@ -49,7 +49,11 @@
                 </div>
 
             </div>
-            <input type="submit" class="button btn btn-primary payment-btn" value="Оплатить">
+		<div class="form-group text-right">
+			<a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+			{{ Form::submit('К оплате',['class' => 'btn btn-primary']) }}
+		</div>
+            
         </form>
             <hr>
         </div>

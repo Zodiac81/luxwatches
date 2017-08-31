@@ -16,10 +16,12 @@ Auth::routes();
 
 Route::group(['prefix' => '/admin','middleware'=>['auth','admin']], function() {
 
-    Route::get('/', function() {
-        return view('admin.index');
+	//Route::get('messages\list', 'MessageController@index')->name('message_list');
+	//Route::delete('messages','MessageController@deleteMessage')->name('message_delete');
+    Route::resource('message', 'MessageController');
+    Route::get('/', function() {return view('admin.index');
     })->name('admin.index');
-    //Route::get('product/delete/{$id}', 'ProductController@destIt')->name('delete_item');
+
     Route::resource('/product','ProductController');
 
     Route::get('orders/{type?}','OrderController@orders');
@@ -50,9 +52,13 @@ Route::get('products', [
                     'as'   => 'products',
                 ]);
 
-Route::match(['get','post'], '/contact', [
+Route::get('/contact', [
         'uses'=>'ContactController@showForm', 
         'as'  =>'contact',
+        ]);
+Route::post('/contact', [
+        'uses'=>'ContactController@getMessage', 
+        'as'  =>'send_message',
         ]);
 
 

@@ -14,7 +14,7 @@ class ArmaniController extends MainSiteController
     public function __construct(){
         parent::__construct();
         $this->template = 'site-template.item-list';
-        $this->breadcrumbs = 'Armani';
+        $this->breadcrumbs = 'Католог';
     }
 
     public function showArmani(){

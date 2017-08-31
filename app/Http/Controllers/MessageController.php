@@ -1,19 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Watch;
-use Cart;
-use Session;
+
 use Illuminate\Http\Request;
+use App\Message;
+use View;
+use Session;
 
-class CartController extends MainSiteController
+class MessageController extends Controller
 {
-
- public function __construct(){
-        $this->template = 'site-template.cart';
-        $this->breadcrumbs = 'Корзина';
-    }
-     
     /**
      * Display a listing of the resource.
      *
@@ -21,13 +16,8 @@ class CartController extends MainSiteController
      */
     public function index()
     {
-        
-
-        $cartItems = Cart::content();
-        //dd($cartItems);
-         return $this->renderOutput()->with(['cartItems'=>$cartItems,]);
-  
-        
+        $messages = Message::all();
+        return View::make('admin.messages_list',compact('messages'));
     }
 
     /**
@@ -37,7 +27,7 @@ class CartController extends MainSiteController
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -70,17 +60,7 @@ class CartController extends MainSiteController
      */
     public function edit($id)
     {
-        $order_watch = Watch::find($id);
-        if($order_watch->discount > 0){
-            $discount = floor(($order_watch->price/100)*$order_watch->discount);
-            $newPrice = ($order_watch->price)-$discount;
-        }else{
-            $newPrice = $order_watch->price;
-        }
-       
-        Cart::add($id, $order_watch->title, 1, $newPrice);
-		Session::flash('success','Товар добавлен в корзину');
-        return back();
+        //
     }
 
     /**
@@ -92,11 +72,7 @@ class CartController extends MainSiteController
      */
     public function update(Request $request, $id)
     {
-        Cart::update($id,$request->qnty);
-        $watches_count = Watch::where("id", $request->watch_id)->first();
-        $watches_count->topseller_counter = $watches_count->topseller_counter + $request->qnty;
-        $watches_count->save();
-        return back();
+        //
     }
 
     /**
@@ -108,8 +84,12 @@ class CartController extends MainSiteController
     public function destroy($id)
     {
 
-        Cart::remove($id);
-        return back();
-    }
+        $deleteMessage = Message::findOrFail($id);
+        $deleteMessage->delete();
+        $value = "Сообщение удалено.";
+        Session::flash('success', $value);
 
+        return redirect()->route('message.index');
+
+    }
 }

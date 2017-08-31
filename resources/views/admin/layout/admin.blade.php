@@ -66,35 +66,53 @@
 </script>
 <!-- DataTab -->
 <script>
-$(document).ready(function () {
+
+	$(document).ready(function () {
         $('#tbproduct').DataTable(
+            {"bPaginate": true});
+    });
+	
+	$(document).ready(function () {
+        $('#tbmessage').DataTable(
             {"bPaginate": true});
     });
 
 </script>
 
  <script>
-/*    $(document).ready(function (e) {
-    $(document).on("click", ".mdelete", function (e) {
-        var delete_id = $(this).attr('data-value');
-        console.log(delete_id);
-       //var del_id =  $('button[name="delete"]').val(delete_id);
-        
-       var del_link = $('#delForm').attr('action', 'product.destroy/'+delete_id);
-       console.log(del_link);
-      
-    });
-});*/
 
     $('table[data-form="deleteForm"]').on('click', '.form-delete', function(e){
-    e.preventDefault();
-    var $form=$(this);
-    console.log($form);
-    $('#confirm').modal({ backdrop: 'static', keyboard: false })
-        .on('click', '#delete-btn', function(){
+		e.preventDefault();
+		var $form=$(this);
+		$('#confirm').modal({ backdrop: 'static', keyboard: false })
+			.on('click', '#delete-btn', function(){
             $form.submit();
         });
-});
+	});
+
+</script>
+
+<script>
+
+	$('table[data-form="tbmessage"]').on('click', '.message-delete', function(e){
+		e.preventDefault();
+		var $form=$(this);
+		$('#deleteMess').modal({ backdrop: 'static', keyboard: false })
+			.on('click', '#deleteMess-btn', function(){
+				$form.submit();
+			});
+	});
+
+</script>
+
+<script>
+
+//Mail
+
+    $(".readMessage").on('click', function(){
+	    $('#message').modal({ backdrop: 'static', keyboard: false })
+    });
+
 </script>
 
 

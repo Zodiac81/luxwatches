@@ -34,7 +34,10 @@
 									 <li>
                                         <a href="{{ route('admin.index') }}">Админпанель</a>
 									</li>
-								@endif
+                                    <li>
+                                        <a href="{{route('logout')}}">Выйти</a>
+                                    </li>
+                                @endif
                                 <li>
                                         <a href="#"> Личный кабинет</a>
                                 </li>

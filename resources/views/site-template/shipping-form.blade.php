@@ -18,17 +18,6 @@
 
 <h2 style="font-family:cursive; ">Адрес доставки</h2>
 
-@if(count($errors) > 0)
-  <div class="alert alert-danger">
-    <ul>
-      @foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-
-@endif
-
 <div class="row">
     <div class="col-md-6 col-md-offset-5">
                 {!! Form::open(['route'=>'address.store','method'=>'post',]) !!}
@@ -45,12 +34,13 @@
 
             <div class="form-group">
                 {{ Form::label('house','Номер дома') }}<br>
-                {{ Form::number('house',null, ['class' => 'col-xs-4']) }}
+				<input type='number' min='1' class='col-xs-4' name='house'>
+               
             </div>
 
              <div class="form-group">
                 {{ Form::label('flat','Номер квартиры') }}<br>
-                {{ Form::text('flat',null, ['class' => 'col-xs-4']) }}
+                <input type='number' min='1' class='col-xs-4' name='flat'>
             </div>
 
             <div class="form-group">
@@ -65,7 +55,7 @@
 
              <div class="form-group">
                 {{ Form::label('zip','Индекс') }}<br>
-                {{ Form::number('zip',null, ['class' => '3']) }}
+                <input type='number' min='0' max='5' class='col-xs-4' name='flat'>
             </div>
 
             <div class="form-group">
@@ -73,8 +63,11 @@
                 {{ Form::select('country', ['UA' => 'Украина'] ) }}
             </div>
 
-
-            {{ Form::submit('К оплате',['class' => 'btn btn-primary']) }}
+<div class="form-group text-right">
+        <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
+		{{ Form::submit('К оплате',['class' => 'btn btn-primary']) }}
+    </div>
+            
 
 
         {!! Form::close() !!}

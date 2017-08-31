@@ -37,12 +37,16 @@
 
                         <td class="text-center">
                        
-                        <a style="float: left; margin-left: 45px; width:60px;" href="{{ route('product.edit', $product->id) }}" class="btn btn-info" style="margin-right: 10%;"><i class="glyphicon glyphicon-edit"></i></a>
+                        <a style="float: left; margin-left: 45px; width:60px;" href="{{ route('product.edit', $product->id) }}" class="btn btn-info" style="margin-right: 10%;">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
 
-                        <form action="{{ route('product.destroy', $product->id) }}" method='POST' class='form-delete'>{{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-                        
-                        <button type='submit' class="btn btn-danger form-delete" style="width:60px;"><i class="glyphicon glyphicon-trash"></i></button>
+                        <form action="{{ route('product.destroy', $product->id) }}" method='POST' class='form-delete'>
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                        <button type='submit' class="btn btn-danger form-delete" style="width:60px;">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
                         </form>       
                                
                             </td>

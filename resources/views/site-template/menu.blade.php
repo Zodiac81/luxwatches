@@ -9,7 +9,21 @@
 		<div class="container">
 			<div class="header">
 				<div class="col-md-9 header-left">
-			@if($menu)
+					<ul class="memenu skyblue">
+						<li class="grid">
+							<a href="{{route('home')}}">Главная</a>
+						</li>
+						<li class="grid">
+							<a href="{{route('')}}">Каталог</a>
+						</li>
+						<li class="grid">
+							<a href="{{route('home')}}">Блог</a>
+						</li>
+						<li class="grid">
+							<a href="{{route('contact')}}">Обратная связь</a>
+						</li>
+					</ul>
+			{{--@if($menu)
 				<div class="top-nav">
 				    <ul class="memenu skyblue">
 
@@ -18,16 +32,9 @@
 					</ul>
 				</div>
 
-			@endif
+			@endif--}}
 				
 			  <div class="clearfix"> </div>
-			</div>
-			
-			<div class="col-md-3 header-right"> 
-				<div class="search-bar">
-					<input type="text" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Поиск';}">
-					<input type="submit" value="">
-				</div>
 			</div>
 			<div class="clearfix"> </div>
 			</div>

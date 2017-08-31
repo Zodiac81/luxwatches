@@ -15,7 +15,7 @@ class SingleController extends MainSiteController
      public function __construct(){
         parent::__construct();
         $this->template = 'site-template.single';
-        $this->breadcrumbs = '';
+        $this->breadcrumbs = '/Каталог';
         
     }
 
