@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Illuminate\Http\Request;
 use App\Watch;
 use DB;
@@ -45,11 +46,17 @@ class ArmaniController extends MainSiteController
     {
 
         $query = Watch::where('sex',$request->sex['0'])->paginate(9);
-		return response()->json([
-                "query" => $query,
-            ]);
+         $images =Image::where('watches_id',$query['0']['attributes']['id'])->all();
+           // $image = $images['image'];
+       // dd( $images['image']);
+		return view('site-template.item-list.item-list')->with(["data"=>$query,
+            "image"=>$image]);
 
+
+
+//        dd($this->renderOutput()->with(['data'=>$query,]));
         //return $this->renderOutput()->with(['data'=>$query,]);
+
     }
 
 }

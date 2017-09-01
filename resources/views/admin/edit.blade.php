@@ -34,11 +34,11 @@
                  <label for='price'>Скидка</label>
                 <input type="number" class='form-control' min='0' name='discount' placeholder='@if(isset($product->discount )) {{ $product->discount }} @endif'>
             </div>
-
+{{--
             <div class="form-group">
                  <label for='file'>Изображение</label>
                 <input type="file" class='form-control' name='file' value='@if(isset($product->title )) {{ $product->title }} @endif'>
-            </div>
+            </div>--}}
             <div class="form-group text-right">
                 <a href='{{url()->previous()}}' class='btn btn-default'>Назад</a>
                 <button type="submit" class='btn btn-default'>Обновить</button>

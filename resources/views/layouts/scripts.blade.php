@@ -107,16 +107,14 @@ $(document).ready(function(){
 	{{--Filter--}}
 $('#category_filter').change(function(){
         $('#category_filter input[type="checkbox"]:checked').each(function(index, element){
-
             var values={};
             var sexList = [];
             var sex = ($(element).data('category'));
             sexList.push(sex);
             values['sex'] = sexList;
-           // console.log(values['sex']);
             var url = "{{route('ajax_armani')}}";
             var request = $.param(values);
-           // console.log(request);
+
 
 
             $.ajaxSetup({
@@ -127,22 +125,23 @@ $('#category_filter').change(function(){
 
             $.ajax({
                 type:'POST',
-                dataType: 'json',
+                dataType: 'html',
                 url: url,
                 data:request,
                 success: function (data){
-                    //console.log(data);
-                     $('#watches-list').remove();
-						 var a = data.query.data;
-						 console.log (a);
-						  for (var key in a) {
-							  for (var key in a){   
-   console.log(a[key].id)
+                    console.log(data);
 
-}
-						 }  
-				
-                }
+                    $('#watches-list').html(data);
+                    console.log (data);
+					/* var a = data.query.data;
+                        console.log (a);*/
+/*
+						    for (var key in a) {
+
+
+						        console.log(a[key].title)
+					         }*/
+                            }
 
             });
 

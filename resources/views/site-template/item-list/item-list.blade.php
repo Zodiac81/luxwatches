@@ -8,10 +8,15 @@
 					<div class="col-md-4 product-left p-left">
 						<div class="product-main simpleCart_shelfItem each-item">
 							<a href="{{ route('single_item', ['id' =>$single_item->id]) }}"   class="mask">
+@if(isset($image))
 
-							 
-							  
-{{ Html::image('assets/images/'.$single_item->sex.'/'. $single_item->alias .'/'.$single_item->vendor_code.'/thm/'. $single_item->image,'alt=',['class'=>'img-responsive zoom-img']) }}</a>
+
+		{{ Html::image('assets/images/'.$single_item->sex.'/'. $single_item->alias .'/'.$single_item->vendor_code.'/thm/'.$image,'alt=',['class'=>'img-responsive zoom-img']) }}</a>
+
+		@endif
+
+
+{{ Html::image('assets/images/'.$single_item->sex.'/'. $single_item->alias .'/'.$single_item->vendor_code.'/thm/'.$single_item->image,'alt=',['class'=>'img-responsive zoom-img']) }}</a>
 
 
 				<div class="product-bottom">
